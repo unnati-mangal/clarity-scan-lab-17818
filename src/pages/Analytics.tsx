@@ -65,21 +65,21 @@ const Analytics = () => {
 
   const fetchAnalytics = async () => {
     // Fetch total users
-    const { count: userCount } = await supabase
+    const { count: userCount } = await (supabase as any)
       .from("profiles")
       .select("*", { count: "exact", head: true });
 
     setTotalUsers(userCount || 0);
 
     // Fetch total searches
-    const { count: searchCount } = await supabase
+    const { count: searchCount } = await (supabase as any)
       .from("search_history")
       .select("*", { count: "exact", head: true });
 
     setTotalSearches(searchCount || 0);
 
     // Fetch weekly user growth
-    const { data: profiles } = await supabase
+    const { data: profiles } = await (supabase as any)
       .from("profiles")
       .select("created_at")
       .order("created_at", { ascending: true });
@@ -87,7 +87,7 @@ const Analytics = () => {
     if (profiles) {
       const weeklyMap = new Map<string, number>();
       
-      profiles.forEach((profile) => {
+      profiles.forEach((profile: any) => {
         const date = new Date(profile.created_at);
         const weekStart = new Date(date);
         weekStart.setDate(date.getDate() - date.getDay());

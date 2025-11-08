@@ -37,7 +37,7 @@ const History = () => {
 
   const fetchHistory = async () => {
     try {
-      const { data, error } = await supabase
+      const { data, error } = await (supabase as any)
         .from("search_history")
         .select("*")
         .order("created_at", { ascending: false });
@@ -57,7 +57,7 @@ const History = () => {
 
   const deleteRecord = async (id: string) => {
     try {
-      const { error } = await supabase
+      const { error } = await (supabase as any)
         .from("search_history")
         .delete()
         .eq("id", id);

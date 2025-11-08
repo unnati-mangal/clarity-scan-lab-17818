@@ -44,7 +44,7 @@ const Search = () => {
     if (!user) return;
 
     try {
-      await supabase.from("search_history").insert({
+      await (supabase as any).from("search_history").insert({
         user_id: user.id,
         query_text: queryText.substring(0, 500),
         query_type: queryType,

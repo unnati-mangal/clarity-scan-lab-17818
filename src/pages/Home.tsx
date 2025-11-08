@@ -20,9 +20,9 @@ const Home = () => {
         
         <div className="container mx-auto relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-8">
-            <div className="inline-block animate-fade-in">
+            <div className="flex justify-center animate-fade-in">
               <div className="relative">
-                <Shield className="h-24 w-24 mx-auto text-primary mb-6 animate-scale-in" 
+                <Shield className="h-28 w-28 text-primary mb-6 animate-scale-in" 
                        style={{ filter: 'drop-shadow(var(--shadow-glow))' }} />
               </div>
             </div>

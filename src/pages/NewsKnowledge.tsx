@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Calendar, TrendingUp, AlertCircle } from "lucide-react";
+import { TrendingNews } from "@/components/TrendingNews";
 
 const newsEvents = [
   {
@@ -77,8 +78,17 @@ const NewsKnowledge = () => {
     <div className="min-h-screen py-12 px-6">
       <div className="container mx-auto max-w-5xl">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">Historical News Knowledge</h1>
+          <h1 className="text-4xl font-bold mb-4">News Hub</h1>
           <p className="text-xl text-muted-foreground">
+            Trending topics and verified historical news events
+          </p>
+        </div>
+
+        <TrendingNews />
+
+        <div className="mb-8">
+          <h2 className="text-3xl font-bold mb-4">Historical News Knowledge</h2>
+          <p className="text-muted-foreground mb-6">
             Verified major events and news stories from recent years
           </p>
         </div>
